@@ -7,6 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <link rel="stylesheet" type="text/css" href="snapjs/snap.css" />
+        <link rel="stylesheet" type="text/css" href="snapjs/demo/assets/demo.css" />
+
     <title>Portfolio</title>
 
     <!-- Bootstrap core CSS -->
@@ -14,9 +21,38 @@
 
     <!-- Custom CSS for the '3 Col Portfolio' Template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
+    
 </head>
 
 <body>
+
+
+
+        <div class="snap-drawers">
+        
+        
+            
+            <div class="snap-drawer snap-drawer-right">
+	            <div>
+                    <h3>RIGHT</h3>
+                    <h4>Demos</h4>
+                    <ul>
+                        <li><a href="default.html">Default</a></li>
+                </div>
+
+            </div>
+            
+            
+        </div>
+
+    <div id="content" class="snap-content"><!------------>
+        <div id="toolbar"><!------------>
+            <a href="#" id="open-left"></a><!------------>
+            <h1>Toggles</h1><!------------>
+        </div><!------------>
+        <div class="toggler" id="ol">Open Left</div><!------------>
+        <div class="toggler" id="or">Open Right</div><!------------>
+    <!--</div>---------->
 
     <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
         <div class="container">
@@ -33,20 +69,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
-                    </li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a>
-                    </li>
-                    <li><a href="#contact">Contact</a>
-                    </li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+            
+            
         </div>
         <!-- /.container -->
     </nav>
 
-    <div class="container">
+    <div class="container content">
 
         <div class="row">
 
@@ -104,60 +139,6 @@
 				-->
             </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x700">
-                </a>
-                <!--
-                <h3><a href="#project-link">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				-->
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x700">
-                </a>
-                <!--
-                <h3><a href="#project-link">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				-->
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x700">
-                </a>
-                <!--
-                <h3><a href="#project-link">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				-->
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x700">
-                </a>
-                <!--
-                <h3><a href="#project-link">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				-->
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x700">
-                </a>
-                <!--
-                <h3><a href="#project-link">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				-->
-            </div>
 
         </div>
 
@@ -249,6 +230,9 @@
         </div>
 
     </div>
+    
+    
+
     <!-- /.container -->
 
     <div class="container">
@@ -265,11 +249,34 @@
 
     </div>
     <!-- /.container -->
+    
+    
+    </div><---------->
+    
 
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
 
-</body>
+        <script type="text/javascript" src="snapjs/snap.js"></script>
+        <script type="text/javascript" src="snapjs/demo/assets/demo.js"></script>
+        <script type="text/javascript">
+            var snapper = new Snap({
+                element: document.getElementById('content')
+/*
+                disable: 'left'
+*/
+            });
+
+            addEvent(document.getElementById('ol'), 'click', function(){
+                snapper.open('left');
+            });
+
+
+            addEvent(document.getElementById('or'), 'click', function(){
+                snapper.open('right');
+            });
+		</script>
+    </body>
 
 </html>
